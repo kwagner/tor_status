@@ -1,0 +1,20 @@
+<project default="build" basedir=".">
+  <target name="build">
+    <mkdir dir="dist"/>
+    <mkdir dir="dist/WEB-INF"/>
+    <mkdir dir="dist/WEB-INF/classes"/>
+    <javac srcdir="src"
+           destdir="dist/WEB-INF/classes"
+           classpath="lib/commons-codec-1.4.jar;lib/postgresql-8.4-701.jdbc4.jar"/>
+    <copy todir="dist/WEB-INF" file="etc/web.xml"/>
+    <copy todir="dist">
+      <fileset dir="web"/>
+    </copy>
+    <copy todir="dist/WEB-INF/lib">
+      <fileset dir="lib"/>
+    </copy>
+    <jar jarfile="status.war"
+         basedir="dist"/>
+  </target>
+</project>
+
