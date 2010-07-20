@@ -1,10 +1,12 @@
 <%@ page import="java.sql.*" %>
 <%
-  String url = "jdbc:postgresql:tordir?user=ernie&password=ernie";
+
+//THIS DOESN'T WORK!!!
+  String url = "jdbc:mysql:tordir?user=ernie&password=ernie";
   String query = "SELECT * FROM statusentry "
       + "WHERE validafter = (SELECT MAX(validafter) FROM statusentry) "
       + "ORDER BY bandwidth DESC;";
-  Class.forName("org.sqlite.JDBC");
+  Class.forName("com.mysql.jdbc.Driver");
   Connection connection = DriverManager.getConnection(url);
   Statement statement = connection.createStatement();
   ResultSet resultSet = statement.executeQuery(query);
