@@ -2,7 +2,7 @@
 	<property name="builddir" value="dist" />
 	<property name="webdir" value="${builddir}/web" />
 	<property name="classdir" value="${builddir}/WEB-INF/classes" />
-	<property name="libdir" value="${builddir}/WEB-INF-/lib" />
+	<property name="libdir" value="${builddir}/WEB-INF/lib" />
 
 	<target name="build">
 		<mkdir dir="${builddir}"/>

@@ -1,7 +1,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.regex.*" %>
 <%
-  String url = "jdbc:postgresql:tordir?user=ernie&password=ernie";
+  String url = "jdbc:postgresql:tordir?user=mvitale";
   String queryDesc = "SELECT * FROM descriptor WHERE descriptor = ?";
   String queryExtra = "SELECT * FROM extrainfo WHERE extrainfo = ?";
   PreparedStatement preparedStatement = null;
