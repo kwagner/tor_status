@@ -9,15 +9,30 @@
 <servlet>
 	<servlet-name>Status Home</servlet-name>
 	<servlet-class>Welcome</servlet-class>
-		<init-param>
-			<param-name>statusIndex</param-name>
-			<param-value>web/index.jsp</param-value>
-		</init-param>
+	<init-param>
+		<param-name>statusIndex</param-name>
+		<param-value>web/index.jsp</param-value>
+	</init-param>
 </servlet>
+
+<servlet>
+	<servlet-name>Search</servlet-name>
+	<servlet-class>Search</servlet-class>
+	<init-param>
+		<param-name>searchResult</param-name>
+		<param-value>web/searchResult.jsp</param-value>
+	</init-param>
+</servlet>
+
 
 <servlet-mapping>
 	<servlet-name>Status Home</servlet-name>
 	<url-pattern>/</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Search</servlet-name>
+	<url-pattern>/Search</url-pattern>
 </servlet-mapping>
 
 </web-app>

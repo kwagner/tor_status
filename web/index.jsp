@@ -20,24 +20,23 @@
 				</td>
 			</tr>
 		</table>
+	</div>
 
 	<div class="main-column" class="center">
 		<h1 id="page-title">Tor Status</h1>
 		<p>You can search for a Tor relay below. Use one or both fields.</p>
 	
-		<form action="RouterSearch" method="post">
-			<div id="name-field">
+		<form method="post" action="Search">
+			<fieldset>
+				<legend>Relay search:</legend>
 				<label for="nameinp">Name:</label>
 				<input type="text" name="name" id="nameinp" size=15>
-			</div>
-			<div id="fingerprint-field">
 				<label for="fingerinp">Fingerprint:</label>
 				<input type="text" name="fingerprint" id="fingerinp" size=40>
-			</div>
-			<div id="search-button">
 				<input type="submit" value="Search">
-			</div>
+			</fieldset>
 		</form>
+		<p>You can also <a href="all-routers">list all known Tor relays</a></p>
 	</div>
 </body>
 	
