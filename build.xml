@@ -1,20 +1,42 @@
 <project default="build" basedir=".">
-  <target name="build">
-    <mkdir dir="dist"/>
-    <mkdir dir="dist/WEB-INF"/>
-    <mkdir dir="dist/WEB-INF/classes"/>
-    <javac srcdir="src"
-           destdir="dist/WEB-INF/classes"
-           classpath="lib/commons-codec-1.4.jar;lib/postgresql-8.4-701.jdbc4.jar"/>
-    <copy todir="dist/WEB-INF" file="etc/web.xml"/>
-    <copy todir="dist">
-      <fileset dir="web"/>
-    </copy>
-    <copy todir="dist/WEB-INF/lib">
-      <fileset dir="lib"/>
-    </copy>
-    <jar jarfile="status.war"
-         basedir="dist"/>
-  </target>
+	<property name="builddir" value="dist" />
+	<property name="webdir" value="${builddir}/web" />
+	<property name="classdir" value="${builddir}/WEB-INF/classes" />
+	<property name="libdir" value="${builddir}/WEB-INF-/lib" />
+
+	<target name="build">
+		<mkdir dir="${builddir}"/>
+		<mkdir dir="${webdir}"/>
+		<mkdir dir="${classdir}"/>
+		<mkdir dir="${libdir}" />
+
+		<javac srcdir="src" destdir="${classdir}">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="${builddir}/WEB-INF" file="etc/web.xml"/>
+		<copy todir="${webdir}">
+			<fileset dir="web">
+				<include name="*.jsp" />
+			</fileset>
+		</copy>
+		<copy todir="${libdir}">
+			<fileset dir="lib">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="buildwar" depends="build">
+		<jar basedir="${builddir}" destfile="status.war" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${builddir}" />
+		<delete file="status.war" />
+	</target>
 </project>
 
