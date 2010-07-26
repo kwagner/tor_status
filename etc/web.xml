@@ -23,6 +23,14 @@
 	</init-param>
 </servlet>
 
+<servlet>
+	<servlet-name>All Routers</servlet-name>
+	<servlet-class>RouterList</servlet-class>
+	<init-param>
+		<param-name>allRouters</param-name>
+		<param-value>web/status.jsp</param-value>
+	</init-param>
+</servlet>
 
 <servlet-mapping>
 	<servlet-name>Status Home</servlet-name>
@@ -31,7 +39,12 @@
 
 <servlet-mapping>
 	<servlet-name>Search</servlet-name>
-	<url-pattern>/Search</url-pattern>
+	<url-pattern>/search</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>All Routers</servlet-name>
+	<url-pattern>/show-all-routers</url-pattern>
 </servlet-mapping>
 
 </web-app>
