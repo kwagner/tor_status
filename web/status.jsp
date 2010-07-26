@@ -1,13 +1,13 @@
 <%@ page import="java.sql.*" %>
 <%
-
-//THIS DOESN'T WORK!!!
-  String url = "jdbc:mysql:tordir?user=ernie&password=ernie";
+  String url = "jdbc:postgresql://localhost:5432/torstatus";
+  String username = "mvitale" ;
+  String password = "ernie";
   String query = "SELECT * FROM statusentry "
       + "WHERE validafter = (SELECT MAX(validafter) FROM statusentry) "
       + "ORDER BY bandwidth DESC;";
-  Class.forName("com.mysql.jdbc.Driver");
-  Connection connection = DriverManager.getConnection(url);
+  Class.forName("org.postgresql.Driver");
+  Connection connection = DriverManager.getConnection(url, username, password);
   Statement statement = connection.createStatement();
   ResultSet resultSet = statement.executeQuery(query);
 %>
