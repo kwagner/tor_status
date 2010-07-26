@@ -26,7 +26,7 @@
 		<h1 id="page-title">Tor Status</h1>
 		<p>You can search for a Tor relay below. Use one or both fields.</p>
 	
-		<form method="post" action="Search">
+		<form method="get" action="Search">
 			<fieldset>
 				<legend>Relay search:</legend>
 				<label for="nameinp">Name:</label>
