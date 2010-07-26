@@ -1,10 +1,10 @@
 <%@ page import="java.sql.*" %>
 <%
-  String url = "jdbc:postgresql:tordir?user=mvitale";
+  String url = "jdbc:postgresql:torstatus?user=mvitale&password=ernie";
   String query = "SELECT * FROM statusentry "
       + "WHERE validafter = (SELECT MAX(validafter) FROM statusentry) "
       + "ORDER BY bandwidth DESC;";
-  Class.forName("org.postgresql.JDBC");
+  Class.forName("org.postgresql.Driver");
   Connection connection = DriverManager.getConnection(url);
   Statement statement = connection.createStatement();
   ResultSet resultSet = statement.executeQuery(query);
