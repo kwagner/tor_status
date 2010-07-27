@@ -19,14 +19,19 @@ public class Welcome extends HttpServlet {
 
 	public void doGet(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
-		forwardReq(statusIndex, req, resp);
+		doGetOrPost(req, resp);
 		return;
 	}
 
-	//As soon as the search form is created, this should change.
 	public void doPost(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
+		doGetOrPost(req, resp);
+		return;
+	}
+
+	private void doGetOrPost(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		forwardReq(statusIndex, req, resp);
 		return;
 	}
 
