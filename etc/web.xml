@@ -19,7 +19,7 @@
 	<servlet-class>Search</servlet-class>
 	<init-param>
 		<param-name>searchResult</param-name>
-		<param-value>web/searchResult.jsp</param-value>
+		<param-value>/web/searchResult.jsp</param-value>
 	</init-param>
 </servlet>
 
@@ -28,7 +28,7 @@
 	<servlet-class>RouterList</servlet-class>
 	<init-param>
 		<param-name>allRouters</param-name>
-		<param-value>web/status.jsp</param-value>
+		<param-value>/web/status.jsp</param-value>
 	</init-param>
 </servlet>
 
