@@ -1,12 +1,14 @@
 <project default="build" basedir=".">
 	<property name="builddir" value="dist" />
 	<property name="webdir" value="${builddir}/web" />
+	<property name="mediadir" value="${webdir}/media" />
 	<property name="classdir" value="${builddir}/WEB-INF/classes" />
 	<property name="libdir" value="${builddir}/WEB-INF/lib" />
 
 	<target name="build">
 		<mkdir dir="${builddir}"/>
 		<mkdir dir="${webdir}"/>
+		<mkdir dir="${mediadir}"/>
 		<mkdir dir="${classdir}"/>
 		<mkdir dir="${libdir}" />
 
@@ -21,6 +23,13 @@
 		<copy todir="${webdir}">
 			<fileset dir="web">
 				<include name="*.jsp" />
+			</fileset>
+		</copy>
+		<copy todir="${mediadir}">
+			<fileset dir="web/media">
+				<include name="*.img" />
+				<include name="*.css" />
+				<include name="*.js" />
 			</fileset>
 		</copy>
 		<copy todir="${libdir}">
