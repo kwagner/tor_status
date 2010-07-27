@@ -1,30 +1,36 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!DOCTYPE HTML>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 	<title>Search Results</title>
-	<link rel="stylesheet" type="text/css" href="http://metrics.torproject.org/css/stylesheet-ltr.css">
+	<link rel="stylesheet" type="text/css" href="web/media/style.css" />
 </head>
 
 <body>
+	<div id="banner">
+		<a href="https://www.torproject.org/"><img src="http://weather.torproject.org/top-left.png" alt="Click to go to home page" width="193" height="79" /></a>
+		<img src="http://weather.torproject.org/top-right.png" />
+	</div>
 
-	<div class="center">
-		<table class="banner" border="0" cellpadding="0" cellspacing="0" summary="">
-			<tr>
-				<td class="banner-left">
-					<a href="https://www.torproject.org/"><img src="http://weather.torproject.org/top-left.png" alt="Click to go to home page" width="193" height="79"></a>
-				</td>
-				<td class="banner-middle">
-					&nbsp
-				</td>
-				<td class="banner-right">
-				</td>
-			</tr>
-		</table>
+	<div id="main-column">
+		<h1>Tor Status - Search Results</h1>
+		<form method="get" action="search">
+			<div id="form-div-1">
+				<label for="router-name">Name:</label>
+				<input type="text" name="router-name" id="router-name" />
+			</div>
+			<div id="form-div-2">
+				<label for="router-fingerprint">Fingerprint:</label>
+				<input type="text" name="router-fingerprint" id="router-fingerprint" />
+			</div>
+			<input type="submit" id="search-submit" value="Search" />
+		</form>
+		<p>
+			<a href="show-all-routers">View all Tor relays</a>
+		<p>
 		<p>Name: ${param.name}</p>
 		<p>Fingerprint: ${param.fingerprint}</p>
 	</div>
-
 </body>
-
+</html>

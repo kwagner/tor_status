@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Search Results</title>
+	<title>Search</title>
 	<link rel="stylesheet" type="text/css" href="web/media/style.css" />
 </head>
 
@@ -12,9 +12,7 @@
 	</div>
 
 	<div id="main-column">
-		<div id="header">
-			<h1>Tor Status</h1>
-		</div>
+		<h1>Tor Status</h1>
 		<p>You can search for a Tor relay below. Use one or both fields.</p>
 		<form method="get" action="search">
 			<div id="form-div-1">
@@ -27,7 +25,9 @@
 			</div>
 			<input type="submit" id="search-submit" value="Search" />
 		</form>
-		<p>You can also <a href="show-all-routers">list all known Tor relays</a></p>
+		<p>
+			<a href="show-all-routers">View all Tor relays</a>
+		</p>
 	</div>
 </body>
 </html>
