@@ -14,7 +14,7 @@
 	</div>
 
 	<div id="main-column">
-		<h1>Tor Status - Search Results</h1>
+		<h1>Tor Status - Search Results <a href="show-all-routers">View All</a></h1>
 		<form method="get" action="search">
 			<div id="form-div-1">
 				<label for="name">Name:</label>
@@ -27,10 +27,23 @@
 			<input type="submit" id="search-submit" value="Search" />
 		</form>
 		<p>
-			<a href="show-all-routers">View all Tor relays</a>
-		<p>
-		<p>Name: ${param.name}</p>
-		<p>Fingerprint: ${param.fingerprint}</p>
+			<c:if test="${param.name!=''}">
+				<c:if test="${param.fingerprint!=''}">
+				Showing Tor relays with name <strong>${param.name}</strong> and fingerprint <strong>${param.fingerprint}</strong>.
+				</c:if>
+				<c:if test="${param.fingerprint==''}">
+				Showing Tor relays with name <strong>${param.name}</strong>.
+				</c:if>
+			</c:if>
+			<c:if test="${param.name==''}">
+				<c:if test="${param.fingerprint!=''}">
+				Showing Tor relays with fingerprint <strong>${param.fingerprint}</strong>.
+				</c:if>
+				<c:if test="${param.fingerprint==''}">
+				<span class="error">You did not specify any search parameters.</span>
+				</c:if>
+			</c:if>
+		</p>
 	</div>
 </body>
 </html>
