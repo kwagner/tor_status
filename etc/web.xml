@@ -44,7 +44,7 @@
 
 <servlet-mapping>
 	<servlet-name>All Routers</servlet-name>
-	<url-pattern>/show-all-routers</url-pattern>
+	<url-pattern>/show-all-routers/</url-pattern>
 </servlet-mapping>
 
 <servlet-mapping>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Search</title>
-	<link rel="stylesheet" type="text/css" href="web/media/style.css" />
+	<link rel="stylesheet" type="text/css" href="/status/web/media/style.css" />
 </head>
 
 <body>
