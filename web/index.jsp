@@ -13,15 +13,14 @@
 
 	<div id="main-column">
 		<h1>Tor Status</h1>
-		<p>You can search for a Tor relay below. Use one or both fields.</p>
 		<form method="get" action="search">
 			<div id="form-div-1">
-				<label for="router-name">Name:</label>
-				<input type="text" name="router-name" id="router-name" />
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name" />
 			</div>
 			<div id="form-div-2">
-				<label for="router-fingerprint">Fingerprint:</label>
-				<input type="text" name="router-fingerprint" id="router-fingerprint" />
+				<label for="fingerprint">Fingerprint:</label>
+				<input type="text" name="fingerprint" id="fingerprint" />
 			</div>
 			<input type="submit" id="search-submit" value="Search" />
 		</form>
