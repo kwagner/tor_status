@@ -3,7 +3,6 @@
 <head>
 	<title>Search Results</title>
 	<link rel="stylesheet" type="text/css" href="web/media/style.css" />
-	<link rel="stylesheet" type="text/css" href="http://metrics.torproject.org/css/stylesheet-ltr.css">
 </head>
 
 <body>
@@ -24,7 +23,7 @@
 				<label for="router-fingerprint">Fingerprint:</label>
 				<input type="text" name="router-fingerprint" id="router-fingerprint" />
 			</div>
-			<input type="submit" value="Search" />
+			<input type="submit" id="search-submit" value="Search" />
 		</form>
 		<p>You can also <a href="show-all-routers">list all known Tor relays</a></p>
 	</div>
