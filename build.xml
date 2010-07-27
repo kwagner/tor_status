@@ -12,13 +12,6 @@
 		<mkdir dir="${classdir}"/>
 		<mkdir dir="${libdir}" />
 
-		<javac srcdir="src" destdir="${classdir}">
-			<classpath>
-				<fileset dir="lib">
-					<include name="*.jar" />
-				</fileset>
-			</classpath>
-		</javac>
 		<copy todir="${builddir}/WEB-INF" file="etc/web.xml"/>
 		<copy todir="${webdir}">
 			<fileset dir="web">
@@ -37,6 +30,13 @@
 				<include name="*.jar" />
 			</fileset>
 		</copy>
+		<javac srcdir="src" destdir="${classdir}">
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
 	</target>
 
 	<target name="buildwar" depends="build">
