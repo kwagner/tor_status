@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 public class Search extends HttpServlet {
 	
 	private String searchResult;
+	private 
 
 	public void init() {
 		searchResult = getServletConfig().getInitParameter("searchResult");
