@@ -10,7 +10,7 @@
 	<servlet-class>Welcome</servlet-class>
 	<init-param>
 		<param-name>statusIndex</param-name>
-		<param-value>web/index.jsp</param-value>
+		<param-value>/web/index.jsp</param-value>
 	</init-param>
 </servlet>
 
