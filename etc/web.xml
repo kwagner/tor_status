@@ -32,6 +32,15 @@
 	</init-param>
 </servlet>
 
+<servlet>
+	<servlet-name>Router Details</servlet-name>
+	<servlet-class>RouterDetails</servlet-class>
+	<init-param>
+		<param-name>routerDetails</param-name>
+		<param-value>/web/routerDetails.jsp</param-value>
+	</init-param>
+</servlet>
+
 <servlet-mapping>
 	<servlet-name>Status Home</servlet-name>
 	<url-pattern>/</url-pattern>
@@ -45,6 +54,11 @@
 <servlet-mapping>
 	<servlet-name>All Routers</servlet-name>
 	<url-pattern>/show-all-routers/</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Router Details</servlet-name>
+	<url-pattern>/router</url-pattern>
 </servlet-mapping>
 
 <servlet-mapping>

@@ -37,7 +37,7 @@
 				String nickname = resultSet.getString("nickname");
 				String address = resultSet.getString("address");
 				String bandwidth = resultSet.getString("bandwidth");
-				String linkTag = "<a href=\"router.jsp?descriptor=" + resultSet.getString("descriptor") + "\">";
+				String linkTag = "<a href=\"/status/router?descriptor=" + resultSet.getString("descriptor") + "\">";
 			%>
 			<tr>
 				<td class="col-1"><%= linkTag %><%= nickname %></a></td>
