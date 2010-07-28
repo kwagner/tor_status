@@ -25,7 +25,7 @@
 			<input type="submit" id="search-submit" value="Search" />
 		</form>
 		<p>
-			<a href="show-all-routers/">View all Tor relays</a>
+			<a href="/status/list/">View all Tor relays</a>
 		</p>
 	</div>
 </body>

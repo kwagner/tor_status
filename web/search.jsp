@@ -14,7 +14,7 @@
 	</div>
 
 	<div id="main-column">
-		<h1>Tor Status - Search Results <a href="show-all-routers">View All</a></h1>
+		<h1>Tor Status - Search Results <a href="/status/list/">View All</a></h1>
 		<form method="get" action="search">
 			<div id="form-div-1">
 				<label for="name">Name:</label>
