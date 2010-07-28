@@ -14,7 +14,7 @@ public class ListServlet extends HttpServlet {
 	private String jsp;
 
 	public void init() {
-		jsp = getServletConfig().getInitParameter("jsp");
+		jsp = getServletConfig().getInitParameter("listJSP");
 	}
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 

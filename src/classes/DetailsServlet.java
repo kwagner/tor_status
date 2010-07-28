@@ -14,7 +14,7 @@ public class DetailsServlet extends HttpServlet {
 	private String jsp;
 
 	public void init() {
-		jsp = getServletConfig().getInitParameter("jsp");
+		jsp = getServletConfig().getInitParameter("detailsJSP");
 	}
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 

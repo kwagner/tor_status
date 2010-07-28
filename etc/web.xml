@@ -9,7 +9,7 @@
 	<servlet-name>Home</servlet-name>
 	<servlet-class>IndexServlet</servlet-class>
 	<init-param>
-		<param-name>jsp</param-name>
+		<param-name>indexJSP</param-name>
 		<param-value>/web/index.jsp</param-value>
 	</init-param>
 </servlet>
@@ -18,7 +18,7 @@
 	<servlet-name>Search</servlet-name>
 	<servlet-class>SearchServlet</servlet-class>
 	<init-param>
-		<param-name>jsp</param-name>
+		<param-name>searchJSP</param-name>
 		<param-value>/web/search.jsp</param-value>
 	</init-param>
 </servlet>
@@ -27,7 +27,7 @@
 	<servlet-name>List</servlet-name>
 	<servlet-class>ListServlet</servlet-class>
 	<init-param>
-		<param-name>jsp</param-name>
+		<param-name>listJSP</param-name>
 		<param-value>/web/list.jsp</param-value>
 	</init-param>
 </servlet>
@@ -36,7 +36,7 @@
 	<servlet-name>Details</servlet-name>
 	<servlet-class>DetailsServlet</servlet-class>
 	<init-param>
-		<param-name>jsp</param-name>
+		<param-name>detailsJSP</param-name>
 		<param-value>/web/details.jsp</param-value>
 	</init-param>
 </servlet>

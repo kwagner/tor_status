@@ -14,7 +14,7 @@ public class SearchServlet extends HttpServlet {
 	private String jsp;
 
 	public void init() {
-		jsp = getServletConfig().getInitParameter("jsp");
+		jsp = getServletConfig().getInitParameter("searchJSP");
 	}
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 

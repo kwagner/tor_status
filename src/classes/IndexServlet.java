@@ -14,7 +14,7 @@ public class IndexServlet extends HttpServlet {
 	private String jsp;
 
 	public void init() {
-		jsp = getServletConfig().getInitParameter("jsp");
+		jsp = getServletConfig().getInitParameter("indexJSP");
 	}
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 
