@@ -1,0 +1,90 @@
+body {
+	margin: 0 auto;
+	max-width: 760px;
+	min-width: 415px;
+	width: 85%;
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	color: #000000;
+	padding-top: 0px;
+}
+
+	div#banner {
+		background: url(http://weather.torproject.org/top-middle.png) repeat-x top left;
+		width: 100%;
+		overflow: auto;
+	}
+
+		img {
+			border: 0;
+		}	
+
+		#banner img {
+			float: right;
+		}
+
+		#banner a img {
+			float: left;
+		}
+
+	div#main-column {
+		padding: 15px 0 10px 10px;
+		text-align: left;
+		clear: both;
+	}
+
+		h1 {
+			font-size: 30px;
+			font-weight: bold;
+			border-bottom: 1px solid black;
+			margin: 5px 0 15px 0;
+		}
+
+		h1 a {
+			font-size: 15px;
+			margin: 0 0 0 5px;
+		}
+
+		.error {
+			color: red;
+			font-style: italic;
+		}
+
+		form {
+			position: relative;
+			height: 41px;
+			width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+			div#form-div-1 {
+				position: absolute;
+				left: 0;
+			}
+
+			div#form-div-2 {
+				position: absolute;
+				left: 196px;
+			}
+
+
+			#search-submit {
+				position: absolute;
+				left: 617px;
+				bottom: 0;	
+			}
+
+			label {
+				display: block;
+			}
+
+			input#name {
+				width: 175px;
+			}
+
+			input#fingerprint {
+				width: 400px;
+			}
