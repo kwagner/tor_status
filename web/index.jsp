@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Search</title>
+	<title>Tor Status Home</title>
 	<link rel="stylesheet" type="text/css" href="/status/web/media/style.css" />
 </head>
 
@@ -25,7 +25,7 @@
 			<input type="submit" id="search-submit" value="Search" />
 		</form>
 		<p>
-			<a href="show-all-routers">View all Tor relays</a>
+			<a href="show-all-routers/">View all Tor relays</a>
 		</p>
 	</div>
 </body>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@ page import="java.sql.*" %>
 <%
   String url = "jdbc:postgresql://localhost:5432/torstatus";
@@ -12,36 +13,41 @@
   ResultSet resultSet = statement.executeQuery(query);
 %>
 <html>
-  <head>
-    <title>Minimal Tor Network Status</title>
-  </head>
-  <body>
-    <table>
-    <tr>
-      <td><b>Nickname</b></td>
-      <td><b>IP address</b></td>
-      <td><b>Bandwidth</b></td>
-      <td><b>Details</b></td>
-    </tr>
-    <%
-      while (resultSet.next()) {
-        String nickname = resultSet.getString("nickname"); 
-        String address = resultSet.getString("address"); 
-        String bandwidth = resultSet.getString("bandwidth"); 
-    %>
-    <tr>
-      <td><%= nickname %></td>
-      <td><%= address %></td>
-      <td><%= bandwidth %></td>
-      <td><%
-        out.println("<a href=\"router.jsp?descriptor=" +
-            resultSet.getString("descriptor") + "\">Details</a>");
-      %></td>
-    </tr>
-    <%
-      }
-    %>
-    </table>
-  </body>
-</html>
+<head>
+	<title>Tor Status - All Routers</title>
+	<link rel="stylesheet" type="text/css" href="/status/web/media/style.css" />
+</head>
 
+<body>
+	<div id="banner">
+		<a href="https://www.torproject.org/"><img src="http://weather.torproject.org/top-left.png" alt="Click to go to home page" width="193" height="79" /></a>
+		<img src="http://weather.torproject.org/top-right.png" />
+	</div>
+	
+	<div id="main-column">
+		<h1>All Tor Relays</h1>
+		<table>
+			<tr>
+				<th class="col-1">Nickname</th>
+				<th class="col-2">IP Address</th>
+				<th class="col-3">Bandwidth</th>
+			</tr>
+			<%
+			  while (resultSet.next()) {
+				String nickname = resultSet.getString("nickname");
+				String address = resultSet.getString("address");
+				String bandwidth = resultSet.getString("bandwidth");
+				String linkTag = "<a href=\"router.jsp?descriptor=" + resultSet.getString("descriptor") + "\">";
+			%>
+			<tr>
+				<td class="col-1"><%= linkTag %><%= nickname %></a></td>
+				<td class="col-2"><%= address %></td>
+				<td class="col-3"><%= bandwidth %></td>
+			</tr>
+			<%
+			  }
+			%>
+		</table>
+	</div>
+</body>
+</html>
