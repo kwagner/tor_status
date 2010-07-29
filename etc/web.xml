@@ -5,6 +5,23 @@
 	      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		     version="2.5">
 			 
+<context-param>
+	<param-name>daoImp</param-name>
+	<param-value>PsqlStatusDAO</param-value>
+</context-param>
+<context-param>
+	<param-name>dbName</param-name>
+    <param-value>torstatus</param-value>
+</context-param>
+<context-param>
+	<param-name>dbUser</param-name>
+	<param-value>mvitale</param-value>	
+</context-param>
+<context-param>
+	<param-name>dbPass</param-name>
+    <param-value>ernie</param-value>
+</context-param>
+
 <servlet>
 	<servlet-name>Status Home</servlet-name>
 	<servlet-class>Welcome</servlet-class>
@@ -18,8 +35,12 @@
 	<servlet-name>Search</servlet-name>
 	<servlet-class>Search</servlet-class>
 	<init-param>
-		<param-name>searchResult</param-name>
+		<param-name>searchJSP</param-name>
 		<param-value>/web/searchResult.jsp</param-value>
+	</init-param>
+	<init-param>
+		<param-name>onFail</param-name>
+		<param-value>/web/technicalError.jsp</param-value>
 	</init-param>
 </servlet>
 

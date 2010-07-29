@@ -1,3 +1,5 @@
+import java.util.List;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -7,36 +9,52 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-public class Search extends HttpServlet {
+
+public class Search extends StatusServlet {
 	
-	private String searchResult;
+	private String searchPage;
+	private String onFail;
 
 	public void init() {
-		searchResult = getServletConfig().getInitParameter("searchResult");
+		searchPage = getServletConfig().getInitParameter("searchJSP");
+		onFail = getServletConfig().getInitParameter("onFail");
+		System.out.println(searchPage);
+		super.init();
+		System.out.println("Successful super.init()");
 	}
 
-	private void doGetOrPost(HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException, IOException {
-		
-		forwardReq(searchResult, req, resp);
-	}
-
-	public void doGet(HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException, IOException {
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			    throws ServletException, IOException {
 		doGetOrPost(req, resp);
 	}
 
-	public void doPost(HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+				throws ServletException, IOException {
 		doGetOrPost(req, resp);
 	}
 
-	private void forwardReq(String resource, HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher(resource).forward(req, resp);
+	private void doGetOrPost(HttpServletRequest req, HttpServletResponse resp)
+			     throws ServletException, IOException {
+		if (initError) {
+			forwardReq(onFail, req, resp);
+		}
+
+		String fingerQuery = req.getParameter("fingerprint");
+		String nameQuery = req.getParameter("name");
+
+		List<RouterResult> searchResults = null;
+		try {
+			searchResults = theDAO.getResults(fingerQuery, nameQuery);
+			System.out.println(searchResults);
+		}
+		catch (StatusDAOException e) {
+			forwardReq(onFail, req, resp);
+			System.out.println("DAO failure!");
+		}
+
+		req.setAttribute("searchResults", searchResults);
+		forwardReq(searchPage, req, resp);
 	}
-
-
 }
 		
 

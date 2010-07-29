@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 
 /**Home page servlet.
  */
-public class Welcome extends HttpServlet {
+public class Welcome extends StatusServlet {
 
 	private String statusIndex;
 
@@ -20,23 +20,15 @@ public class Welcome extends HttpServlet {
 	public void doGet(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
 		doGetOrPost(req, resp);
-		return;
 	}
 
 	public void doPost(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
 		doGetOrPost(req, resp);
-		return;
 	}
 
 	private void doGetOrPost(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
 		forwardReq(statusIndex, req, resp);
-		return;
-	}
-
-	private void forwardReq(String resource, HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher(resource).forward(req, resp);
 	}
 }
