@@ -18,9 +18,7 @@ public class SearchServlet extends StatusServlet {
 	public void init() {
 		searchPage = getServletConfig().getInitParameter("searchJSP");
 		onFail = getServletConfig().getInitParameter("onFail");
-		System.out.println(searchPage);
 		super.init();
-		System.out.println("Successful super.init()");
 	}
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -45,11 +43,10 @@ public class SearchServlet extends StatusServlet {
 		List<RouterResult> searchResults = null;
 		try {
 			searchResults = theDAO.getResults(fingerQuery, nameQuery);
-			System.out.println(searchResults);
 		}
 		catch (StatusDAOException e) {
+			System.out.println(e);
 			forwardReq(onFail, req, resp);
-			System.out.println("DAO failure!");
 		}
 
 		req.setAttribute("searchResults", searchResults);
