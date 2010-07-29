@@ -47,6 +47,14 @@ body {
 			margin: 0 0 0 5px;
 		}
 
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
 		.error {
 			color: red;
 			font-style: italic;
@@ -87,4 +95,33 @@ body {
 
 			input#fingerprint {
 				width: 400px;
+			}
+
+		table {
+			border: 1px solid rgb(200, 200, 200);
+			border-collapse: collapse;
+		}
+
+			th {
+				padding: 5px 15px 5px 15px;
+				border: 1px solid rgb(200, 200, 200);
+				background-color: rgb(0, 153, 51);
+				color: white;
+			}
+
+			td {
+				padding: 1px 10px 1px 10px;
+				border: 1px solid rgb(200, 200, 200);
+			}
+
+			td.col-3 {
+				text-align: right;
+			}
+
+			tr:hover {
+				background-color: rgb(102, 255, 153);
+			}
+
+			td:hover {
+				background-color: rgb(179, 255, 204);
 			}

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
-public class Search extends StatusServlet {
+public class SearchServlet extends StatusServlet {
 	
 	private String searchPage;
 	private String onFail;

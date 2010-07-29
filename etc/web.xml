@@ -23,20 +23,20 @@
 </context-param>
 
 <servlet>
-	<servlet-name>Status Home</servlet-name>
-	<servlet-class>Welcome</servlet-class>
+	<servlet-name>Home</servlet-name>
+	<servlet-class>IndexServlet</servlet-class>
 	<init-param>
-		<param-name>statusIndex</param-name>
+		<param-name>indexJSP</param-name>
 		<param-value>/web/index.jsp</param-value>
 	</init-param>
 </servlet>
 
 <servlet>
 	<servlet-name>Search</servlet-name>
-	<servlet-class>Search</servlet-class>
+	<servlet-class>SearchServlet</servlet-class>
 	<init-param>
 		<param-name>searchJSP</param-name>
-		<param-value>/web/searchResult.jsp</param-value>
+		<param-value>/web/search.jsp</param-value>
 	</init-param>
 	<init-param>
 		<param-name>onFail</param-name>
@@ -45,16 +45,25 @@
 </servlet>
 
 <servlet>
-	<servlet-name>All Routers</servlet-name>
-	<servlet-class>RouterList</servlet-class>
+	<servlet-name>List</servlet-name>
+	<servlet-class>ListServlet</servlet-class>
 	<init-param>
-		<param-name>allRouters</param-name>
-		<param-value>/web/status.jsp</param-value>
+		<param-name>listJSP</param-name>
+		<param-value>/web/list.jsp</param-value>
+	</init-param>
+</servlet>
+
+<servlet>
+	<servlet-name>Details</servlet-name>
+	<servlet-class>DetailsServlet</servlet-class>
+	<init-param>
+		<param-name>detailsJSP</param-name>
+		<param-value>/web/details.jsp</param-value>
 	</init-param>
 </servlet>
 
 <servlet-mapping>
-	<servlet-name>Status Home</servlet-name>
+	<servlet-name>Home</servlet-name>
 	<url-pattern>/</url-pattern>
 </servlet-mapping>
 
@@ -64,8 +73,13 @@
 </servlet-mapping>
 
 <servlet-mapping>
-	<servlet-name>All Routers</servlet-name>
-	<url-pattern>/show-all-routers/</url-pattern>
+	<servlet-name>List</servlet-name>
+	<url-pattern>/list/</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Details</servlet-name>
+	<url-pattern>/router</url-pattern>
 </servlet-mapping>
 
 <servlet-mapping>
